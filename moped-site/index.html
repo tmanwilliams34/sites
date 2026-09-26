@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BackyardMechanic</title>
+  <meta name="description" content="BackyardMechanic: 50cc moped maintenance and repair in Laie, Oahu. Oil changes, tune-ups, carb cleaning, valve adjustments, and car code scans.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo"><span class="logo-mark">⚙</span> <span id="biz-name">BackyardMechanic</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#hours">Hours</a>
+        <a href="#info">Info</a>
+        <a href="#request">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Laie, Oahu · 50cc moped specialist</p>
+      <h1>Keep your moped running.</h1>
+      <p class="lead">Honest, affordable maintenance and repair. Simple jobs done quick, bigger jobs done right.</p>
+      <div id="open-status" class="status-pill">Checking hours…</div>
+      <div class="hero-actions">
+        <a href="#request" class="btn btn-primary">Request a service</a>
+        <a href="#services" class="btn btn-ghost">See prices</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services &amp; pricing</h2>
+      <p class="section-note">Prices are <strong>labor</strong>. Parts are billed after. I'll let you the parts price before starting any work.</p>
+
+      <h3 class="tier-title">Quick services <span class="tier-tag">Usually same visit</span></h3>
+      <div id="simple-services" class="card-grid"></div>
+
+      <h3 class="tier-title">Specialist services <span class="tier-tag tier-tag-alt">Book ahead</span></h3>
+      <div id="complex-services" class="card-grid"></div>
+
+      <h3 class="tier-title">Cars</h3>
+      <div id="car-services" class="card-grid"></div>
+
+      <p class="section-note small" id="mobile-fee-note"></p>
+    </div>
+  </section>
+
+  <!-- ===== AVAILABILITY ===== -->
+  <section id="hours" class="section section-alt">
+    <div class="container">
+      <h2>Availability</h2>
+      <p class="section-note">All times are Hawaii time (HST). Outside these hours? Send a request and I'll see what I can do.</p>
+      <div id="week-grid" class="week-grid"></div>
+      <p id="next-open" class="next-open"></p>
+    </div>
+  </section>
+
+  <!-- ===== GOOD TO KNOW ===== -->
+  <section id="info" class="section">
+    <div class="container">
+      <h2>Good to know</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h4>🛵 What I work on</h4>
+          <p>50cc mopeds and scooters (GY6-style and similar). Bigger scooters by request, so send an email first.</p>
+        </article>
+        <article class="card">
+          <h4>📍 Service area</h4>
+          <p>Laie: quick services can be mobile (I come to you). Kahuku and Hau'ula: drop off at the garage. Specialist jobs are always done at the garage.</p>
+        </article>
+        <article class="card">
+          <h4>💵 Payment</h4>
+          <p>Cash or Venmo, paid when the work is done. Parts at cost, and I'll give you the parts price before starting.</p>
+        </article>
+        <article class="card">
+          <h4>📝 Service agreement</h4>
+          <p>Every job starts with a short signed agreement that notes your vehicle's condition, the work approved, and the price, so we're both on the same page.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REQUEST FORM ===== -->
+  <section id="request" class="section">
+    <div class="container narrow">
+      <h2>Request a service</h2>
+      <p class="section-note">Fill this out and it will open an email to me with everything filled in. For anything not listed, pick "Something else" and describe it.</p>
+
+      <form id="request-form" novalidate>
+        <div class="form-row">
+          <label>Your name
+            <input type="text" name="name" required>
+          </label>
+          <label>Phone (optional)
+            <input type="tel" name="phone">
+          </label>
+        </div>
+
+        <label>Vehicle (make, model, year)
+          <input type="text" name="vehicle" placeholder="e.g. Tao Tao 50cc, 2021" required>
+        </label>
+
+        <label>Service
+          <select name="service" id="service-select" required></select>
+        </label>
+
+        <div class="form-row">
+          <label>Preferred time
+            <select name="slot" id="slot-select"></select>
+          </label>
+          <label>Where?
+            <select name="where">
+              <option>Drop-off at the garage (Laie)</option>
+              <option>Mobile in Laie, quick services only (+ mobile fee)</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Describe the problem or request
+          <textarea name="details" rows="4" placeholder="Sounds, symptoms, when it started, anything you've already tried…"></textarea>
+        </label>
+
+        <p id="form-error" class="form-error" role="alert"></p>
+        <button type="submit" class="btn btn-primary btn-block">Open email with my request</button>
+        <p class="small center">Email not opening? Write to <a id="email-link" href="#"></a></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span class="biz-name-footer">BackyardMechanic</span> · Laie, HI</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
