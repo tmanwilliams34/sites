@@ -13,7 +13,6 @@ const CONFIG = {
 // Weekly availability. Days: 0=Sun, 1=Mon, ... 6=Sat. Hours are 24h format.
 // A day can have more than one block, e.g. [[9, 11], [14, 17]].
 const AVAILABILITY = {
-  1: [[17, 19]],   // Monday    5–7 PM
   3: [[14, 18]],   // Wednesday 2–6 PM
   6: [[14, 17]],   // Saturday  2–5 PM
 };
@@ -90,7 +89,7 @@ function renderAvailability() {
   document.getElementById("week-grid").innerHTML = DAY_NAMES.map((name, i) => {
     const blocks = AVAILABILITY[i];
     const classes = ["day", blocks ? "available" : "", i === today ? "today" : ""].join(" ");
-    const hoursText = blocks ? blocks.map(fmtBlock).join("<br>") : "Closed";
+    const hoursText = blocks ? blocks.map(fmtBlock).join("<br>") : "Closed / By Request";
     return `<div class="${classes}"><div class="day-name">${name}</div><div class="day-hours">${hoursText}</div></div>`;
   }).join("");
 
@@ -101,7 +100,7 @@ function renderAvailability() {
     pill.textContent = `● Open now until ${fmtHour(current[1])}`;
     pill.className = "status-pill open";
   } else {
-    pill.textContent = "● Closed right now";
+    pill.textContent = "● Closed now · request welcome";
     pill.className = "status-pill closed";
   }
 
